@@ -1,0 +1,231 @@
+INPUT[type=text],
+INPUT[type=password],
+SELECT {
+  width: 100%;
+}
+
+TEXTAREA {
+  width: 100%;
+  height: 10em;
+}
+
+.butt-center {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+}
+
+#wrap {
+  margin-top: 1em;
+}
+
+#access_password {
+  width: 25%;
+}
+
+.toggle-control {
+  display: none;
+}
+
+#admin-left {
+  float: left;
+  width: 40%;
+  padding-bottom: 3em;
+}
+
+#admin-right {
+  float: right;
+  width: 50%;
+}
+
+.admin-edit {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.admin-edit #admin-left,
+.admin-edit #admin-right {
+  width: 48%;
+  padding-bottom: 0;
+}
+
+.form-left {
+  float: left;
+  width: 46%;
+}
+
+.form-right {
+  float: right;
+  width: 46%;
+}
+
+.sub-sidebar {
+  margin-bottom: 1.5em;
+}
+
+.sub-sidebar span {
+  margin-left: 1.5em;
+}
+
+#sticky span {
+  margin-left: 4em;
+}
+
+.sub-sidebar span:first-child,
+#sticky span:first-child {
+  margin-left: 0;
+}
+
+#sched-prev, #sched-next {
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
+}
+
+#sched-month {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.controls, .info {
+  float: left;
+}
+
+.c1 .controls { width: 6%; }
+.c2 .controls { width: 12%; }
+.c3 .controls { width: 16%; }
+
+.controls IMG {
+  vertical-align: middle;
+  margin: 0 0.2em;
+  height: 1.3em;
+  width: auto;
+}
+
+.sched-date {
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  font-size: 120%;
+}
+
+.c1 .sched-date { width: 16%; }
+.c2 .sched-date { width: 13%; }
+.c3 .sched-date { width: 13%; }
+
+.info {
+  font-size: 120%;
+}
+
+.c1 .info { width: 94%; }
+.c2 .info { width: 88%; }
+.c3 .info { width: 71%; }
+
+/*.controls {outline: 1px solid red;}
+.sched-date {outline: 1px solid black;}
+.info {outline: 1px solid blue;}*/
+
+.show-spacer {
+  clear: both;
+  height: 1.5em;
+}
+
+#admin-left .c3 .controls { width: 20%; }
+#admin-left .c3 .sched-date { width: 20%; }
+#admin-left .c3 .info { width: 60%; }
+
+
+@media only screen and (max-width: 480px) {
+  INPUT[type=text],
+  INPUT[type=password] {
+    padding: 0.5em;
+    width: 90%;
+    font-size: 90%;
+  }
+
+  TEXTAREA {
+    width: 95%;
+    font-size: 90%;
+  }
+
+  SELECT {
+    width: 98%;
+    font-size: 90%;
+  }
+
+  INPUT[type=button],
+  INPUT[type=submit],
+  INPUT[type=file] {
+    width: 100%;
+    font-size: 90%;
+  }
+
+  #access_password {
+    width: 94%;
+  }
+
+  .admin-edit {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+  
+  .toggle-control {
+    display: block;
+    padding-bottom: 1em;
+  }
+
+  #admin-left {
+    display: none;
+  }
+
+  #admin-left INPUT[type=text], #admin-right INPUT[type=text] {
+    width: 90%;
+    font-size: 90%;
+  }
+
+  #admin-left, #admin-right,
+  .admin-edit #admin-left, .admin-edit #admin-right {
+    float: none;
+    width: 100%;
+  }
+
+  .form-left, .form-right {
+    float: none;
+    width: auto;
+  }
+  
+  .sub-sidebar SPAN,
+  #sticky span {
+    display: block;
+    margin-left: 0;
+  }
+
+  #sched-prev, #sched-next {
+    width: 15%;
+  }
+
+  #sched-month {
+    width: 70%;
+    font-size: 70%;
+    line-height: 1.1em;
+  }
+  
+  .c3 .controls { width: 3em; }
+
+  .controls IMG {
+    height: 2em;
+    margin: 0 0 0.5em;
+  }
+
+  .show-spacer {
+    height: 2.5em;
+  }
+
+  #admin-left .c3 .sched-date, #admin-left .c3 .info {
+    width: calc(100% - 3em);
+    padding-left: 0.5em;
+    text-align: left;
+  }
+}
