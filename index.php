@@ -2,8 +2,7 @@
 include "header.php";
 ?>
 
-<!-- <div class="spiff">Voted Best Rock Club in the 2013 Shepherd Express Best of Milwaukee Readers' Choice Awards</div> -->
-<div class="spiff">Celebrating 25 years of bringing great music to Milwaukee!</div>
+<!-- <div class="spiff">Celebrating 25 years of bringing great music to Milwaukee!</div> -->
 
 <h1>Upcoming Shows</h1>
 <?php
