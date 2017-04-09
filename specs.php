@@ -4,7 +4,7 @@ include "header.php";
 ?>
 
 <h1>Technical Specs</h1>
-Shank Hall's audio and lighting system is provided by Faymous Sound.  Technical questions should be directed to Tommy Fay at (262) 376-7688 or (414) 640-0702.<br>
+Shank Hall's audio and lighting system is provided by Faymous Sound.  Technical questions should be directed to Tommy Fay at (414) 640-0702.<br>
 <br>
 <br>
 
