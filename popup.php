@@ -81,7 +81,7 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
   if ($act1_image != "") {
     list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act1_image);
     $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-    echo "<img src=\"images/bands/" . $act1_image . "\" alt=\"" . strip_tags($act1) . "\" class=\"$imgstyle\">\n";
+    echo "<img src=\"images/bands/" . $act1_image . "?" . time() . "\" alt=\"" . strip_tags($act1) . "\" class=\"$imgstyle\">\n";
   }
 
   // Act 1 description
@@ -95,7 +95,7 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     if ($act2_image != "") {
       list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act2_image);
       $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-      echo "<img src=\"images/bands/" . $act2_image . "\" alt=\"" . strip_tags($act2) . "\" class=\"$imgstyle\">\n";
+      echo "<img src=\"images/bands/" . $act2_image . "?" . time() . "\" alt=\"" . strip_tags($act2) . "\" class=\"$imgstyle\">\n";
     }
 
     // Act 2 description
@@ -110,7 +110,7 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     if ($act3_image != "") {
       list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act3_image);
       $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-      echo "<img src=\"images/bands/" . $act3_image . "\" alt=\"" . strip_tags($act3) . "\" class=\"$imgstyle\">\n";
+      echo "<img src=\"images/bands/" . $act3_image . "?" . time() . "\" alt=\"" . strip_tags($act3) . "\" class=\"$imgstyle\">\n";
     }
 
     // Act 3 description
@@ -125,7 +125,7 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     if ($act4_image != "") {
       list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act4_image);
       $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-      echo "<img src=\"images/bands/" . $act4_image . "\" alt=\"" . strip_tags($act4) . "\" class=\"$imgstyle\">\n";
+      echo "<img src=\"images/bands/" . $act4_image . "?" . time() . "\" alt=\"" . strip_tags($act4) . "\" class=\"$imgstyle\">\n";
     }
 
     // Act 4 description

@@ -20,7 +20,7 @@ $img_alt = ($row['main_text'] != "") ? strip_tags($row['main_text']) : strip_tag
 
 <div class="playbox">
   <div class="playbox-img">
-    <img src="<?php echo $img; ?>" alt="<?php echo $img_alt; ?>" style="<?php echo $adj_pos; ?>">
+    <img src="<?php echo $img . "?" . time(); ?>" alt="<?php echo $img_alt; ?>" style="<?php echo $adj_pos; ?>">
     <?php
     if ($row['notice'] == "canceled") echo "<img src=\"images/canceled.png\" alt=\"CANCELED\" class=\"playbox-stamp\">";
     if ($row['notice'] == "soldout") echo "<img src=\"images/soldout.png\" alt=\"SOLD OUT\" class=\"playbox-stamp\">";
