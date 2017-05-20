@@ -4,6 +4,10 @@ include "header.php";
 
 <!-- <div class="spiff">Celebrating 25 years of bringing great music to Milwaukee!</div> -->
 
+<?php if (strtotime("now") <= strtotime("17 December 2016 11:00pm")) { ?>
+<strong style="font-size: 125%;">Tonight's Southbound show has been postponed due to the weather. It is rescheduled for May 6th.</strong><br><br>
+<?php } ?>
+
 <h1>Upcoming Shows</h1>
 <?php
 $result = $mysqli->query("SELECT * FROM schedule WHERE show_date >= '$today' AND embargo_date <= '$rightnow' AND acg = '' AND playbox = '' ORDER BY show_date ASC LIMIT 3");
@@ -17,10 +21,6 @@ $result->close();
 ?>
 
 <br><br>
-
-<?php if (strtotime("now") <= strtotime("13 February 2015 9:00pm")) { ?>
-<a href="http://southmilwaukeepac.org/event/the-pedrito-martinez-group-featuring-ariacne-trujillo/"><img src="images/20150213.jpg" alt="" style="max-width: 100%; margin-bottom: 3em;"></a><br>
-<?php } ?>
 
 <h1>Recently Added Shows</h1>
 <?php
@@ -73,7 +73,7 @@ $result->close();
 
 <?php
 // Create RSS feed
-$TheUrl = "http://www.shankhall.com";
+$TheUrl = "https://shankhall.com";
 
 $TheFeed = "<?xml version='1.0'?>\n<rss version=\"2.0\">
   <channel>
