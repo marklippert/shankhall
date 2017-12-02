@@ -69,10 +69,8 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     if (!empty($time) && !empty($cover)) echo " &nbsp; ";
     if (!empty($cover)) echo $cover;
     
-    if (substr($tickets, 0, 20) == "http://www.ticketweb" && $notice != "soldout" && $notice != "canceled")
-      echo "<a href=\"" . $tickets . "\"><img src=\"images/ticketweb.png\" alt=\"TicketWeb\"></a>";
-    if (substr($tickets, 0, 20) == "http://www.ticketmas" && $notice != "soldout" && $notice != "canceled")
-      echo "<a href=\"" . $tickets . "\"><img src=\"images/ticketmaster.png\" alt=\"TicketMaster\"></a>";
+    if (strpos($tickets, 'ticketweb') !== false && $notice != "soldout" && $notice != "canceled") echo "<a href=\"" . $tickets . "\"><img src=\"images/ticketweb.png\" alt=\"TicketWeb\"></a>";
+    if (strpos($tickets, 'ticketmaster') !== false && $notice != "soldout" && $notice != "canceled") echo "<a href=\"" . $tickets . "\"><img src=\"images/ticketmaster.png\" alt=\"TicketMaster\"></a>";
     ?>
   </div> <!-- END popup-time -->
   

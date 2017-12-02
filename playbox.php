@@ -90,10 +90,8 @@ $img_alt = ($row['main_text'] != "") ? strip_tags($row['main_text']) : strip_tag
 
     if ($row['notice'] == "canceled") echo "</strike>";
     
-    if (substr($row['tickets'], 0, 20) == "http://www.ticketweb" && $row['notice'] != "soldout" && $row['notice'] != "canceled")
-      echo "<a href=\"" . $row['tickets'] . "\"><img src=\"images/ticketweb.png\" alt=\"TicketWeb\"></a>";
-    if (substr($row['tickets'], 0, 20) == "http://www.ticketmas" && $row['notice'] != "soldout" && $row['notice'] != "canceled")
-      echo "<a href=\"" . $row['tickets'] . "\"><img src=\"images/ticketmaster.png\" alt=\"TicketMaster\"></a>";
+    if (strpos($row['tickets'], 'ticketweb') !== false && $row['notice'] != "soldout" && $row['notice'] != "canceled") echo "<a href=\"" . $row['tickets'] . "\"><img src=\"images/ticketweb.png\" alt=\"TicketWeb\"></a>";
+    if (strpos($row['tickets'], 'ticketmaster') !== false && $row['notice'] != "soldout" && $row['notice'] != "canceled") echo "<a href=\"" . $row['tickets'] . "\"><img src=\"images/ticketmaster.png\" alt=\"TicketMaster\"></a>";
     ?>
   </div> <!-- END playbox-time -->
   
