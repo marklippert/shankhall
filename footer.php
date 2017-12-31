@@ -1,6 +1,6 @@
         </article>
 
-        <?php if ($PageTitle == "") { ?>
+        <?php if (!isset($PageTitle)) { ?>
         <aside>
           <h1>Quick Calendar</h1>
           <div id="quickcal-back">

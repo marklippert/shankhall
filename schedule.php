@@ -75,47 +75,84 @@ include "header.php";
         echo "
         <div class=\"cal-datebox\">
           <div class=\"cal-date\">$day_num</div>
-          <div class=\"cal-day\">" . date("D", $eventarr[$day_num][0]['show_date']) . "</div>
+          <div class=\"cal-day\">";
+            if (isset($eventarr[$day_num][0]['show_date'])) {
+              $sshow_date = $eventarr[$day_num][0]['show_date'];
+              echo date("D", $sshow_date);
+            }
+          echo "</div>
         </div>
         ";
 
         // This day has a show so display it
         if (isset($eventarr[$day_num])) {
+          $snotice = (isset($eventarr[$day_num][0]['notice'])) ? $eventarr[$day_num][0]['notice'] : "";
+          $sact1 = (isset($eventarr[$day_num][0]['act1'])) ? $eventarr[$day_num][0]['act1'] : "";
+          $sact1_url = (isset($eventarr[$day_num][0]['act1_url'])) ? $eventarr[$day_num][0]['act1_url'] : "";
+          $sact1_image = (isset($eventarr[$day_num][0]['act1_image'])) ? $eventarr[$day_num][0]['act1_image'] : "";
+          $sact1_desc = (isset($eventarr[$day_num][0]['act1_desc'])) ? $eventarr[$day_num][0]['act1_desc'] : "";
+          $sact2 = (isset($eventarr[$day_num][0]['act2'])) ? $eventarr[$day_num][0]['act2'] : "";
+          $sact2_url = (isset($eventarr[$day_num][0]['act2_url'])) ? $eventarr[$day_num][0]['act2_url'] : "";
+          $sact2_image = (isset($eventarr[$day_num][0]['act2_image'])) ? $eventarr[$day_num][0]['act2_image'] : "";
+          $sact2_desc = (isset($eventarr[$day_num][0]['act2_desc'])) ? $eventarr[$day_num][0]['act2_desc'] : "";
+          $sact3 = (isset($eventarr[$day_num][0]['act3'])) ? $eventarr[$day_num][0]['act3'] : "";
+          $sact3_url = (isset($eventarr[$day_num][0]['act3_url'])) ? $eventarr[$day_num][0]['act3_url'] : "";
+          $sact3_image = (isset($eventarr[$day_num][0]['act3_image'])) ? $eventarr[$day_num][0]['act3_image'] : "";
+          $sact3_desc = (isset($eventarr[$day_num][0]['act3_desc'])) ? $eventarr[$day_num][0]['act3_desc'] : "";
+          $sact4 = (isset($eventarr[$day_num][0]['act4'])) ? $eventarr[$day_num][0]['act4'] : "";
+          $sact4_url = (isset($eventarr[$day_num][0]['act4_url'])) ? $eventarr[$day_num][0]['act4_url'] : "";
+          $sact4_image = (isset($eventarr[$day_num][0]['act4_image'])) ? $eventarr[$day_num][0]['act4_image'] : "";
+          $sact4_desc = (isset($eventarr[$day_num][0]['act4_desc'])) ? $eventarr[$day_num][0]['act4_desc'] : "";
+          $stime = (isset($eventarr[$day_num][0]['time'])) ? $eventarr[$day_num][0]['time'] : "";
+          $scover = (isset($eventarr[$day_num][0]['cover'])) ? $eventarr[$day_num][0]['cover'] : "";
+          
           echo "<div class=\"cal-info\">\n";
 
           // Sold out?
-          if ($eventarr[$day_num][0]['notice'] == "soldout") echo "<strong style=\"color: #000000;\">SOLD OUT</strong><br>";
+          if ($snotice == "soldout") echo "<strong style=\"color: #000000;\">SOLD OUT</strong><br>";
 
           // Canceled?
-          if ($eventarr[$day_num][0]['notice'] == "canceled") echo "<strong style=\"color: #000000;\">CANCELED</strong><br><strike>";
+          if ($snotice == "canceled") echo "<strong style=\"color: #000000;\">CANCELED</strong><br><strike>";
 
           // Display acts
-          echo (empty($eventarr[$day_num][0]['act1_url'])) ? $eventarr[$day_num][0]['act1'] : "<a href=\"" . $eventarr[$day_num][0]['act1_url'] . "\">" . $eventarr[$day_num][0]['act1'] . "</a>";
-          if ($eventarr[$day_num][0]['act2'] != "") {
+          echo ($sact1_url == "") ? $sact1 : "<a href=\"" . $sact1_url . "\">" . $sact1 . "</a>";
+          if ($sact2 != "") {
             echo ", ";
-            echo (empty($eventarr[$day_num][0]['act2_url'])) ? $eventarr[$day_num][0]['act2'] : "<a href=\"" . $eventarr[$day_num][0]['act2_url'] . "\">" . $eventarr[$day_num][0]['act2'] . "</a>";
+            echo ($sact2_url == "") ? $sact2 : "<a href=\"" . $sact2_url . "\">" . $sact2 . "</a>";
           }
-          if ($eventarr[$day_num][0]['act3'] != "") {
+          if ($sact3 != "") {
             echo ", ";
-            echo (empty($eventarr[$day_num][0]['act3_url'])) ? $eventarr[$day_num][0]['act3'] : "<a href=\"" . $eventarr[$day_num][0]['act3_url'] . "\">" . $eventarr[$day_num][0]['act3'] . "</a>";
+            echo ($sact3_url == "") ? $sact3 : "<a href=\"" . $sact3_url . "\">" . $sact3 . "</a>";
           }
-          if ($eventarr[$day_num][0]['act4'] != "") {
+          if ($sact4 != "") {
             echo ", ";
-            echo (empty($eventarr[$day_num][0]['act4_url'])) ? $eventarr[$day_num][0]['act4'] : "<a href=\"" . $eventarr[$day_num][0]['act4_url'] . "\">" . $eventarr[$day_num][0]['act4'] . "</a>";
+            echo ($sact4_url == "") ? $sact4 : "<a href=\"" . $sact4_url . "\">" . $sact4 . "</a>";
           }
 
           // Display time and cover
-          if (!empty($eventarr[$day_num][0]['time']) || !empty($eventarr[$day_num][0]['cover'])) echo "<br>\n";
-          echo (empty($eventarr[$day_num][0]['time'])) ? "" : $eventarr[$day_num][0]['time'] . " ";
-          echo (empty($eventarr[$day_num][0]['cover'])) ? "" : $eventarr[$day_num][0]['cover'] . " ";
+          if (($stime != "") || ($scover != "")) echo "<br>\n";
+          echo ($stime == "") ? "" : $stime . " ";
+          echo ($scover == "") ? "" : $scover . " ";
 
           // Canceled?
-          if ($eventarr[$day_num][0]['notice'] == "canceled") echo "</strike>";
+          if ($snotice == "canceled") echo "</strike>";
 
           // Display "show details"
-          if (!empty($eventarr[$day_num][0]['act1_image']) || !empty($eventarr[$day_num][0]['act1_desc']) || !empty($eventarr[$day_num][0]['act2_image']) || !empty($eventarr[$day_num][0]['act2_desc']) || !empty($eventarr[$day_num][0]['act3_image']) || !empty($eventarr[$day_num][0]['act3_desc']) || !empty($eventarr[$day_num][0]['act4_image']) || !empty($eventarr[$day_num][0]['act4_desc'])) echo "<br><a href=\"#popup" . $eventarr[$day_num][0]['id'] . "\" class=\"popup-link\" style=\"font-size: 80%;\">show details</a>";
+          if (($sact1_image != "") || ($sact1_desc != "") || ($sact2_image != "") || ($sact2_desc != "") || ($sact3_image != "") || ($sact3_desc != "") || ($sact4_image != "") || ($sact4_desc != "")) echo "<br><a href=\"#popup" . $eventarr[$day_num][0]['id'] . "\" class=\"popup-link\" style=\"font-size: 80%;\">show details</a>";
 
           echo "</div>\n";
+
+          // Popup-only variables
+          $swmse = (isset($eventarr[$day_num][0]['wmse'])) ? $eventarr[$day_num][0]['wmse'] : "";
+          $ssprecher = (isset($eventarr[$day_num][0]['sprecher'])) ? $eventarr[$day_num][0]['sprecher'] : "";
+          $scascio = (isset($eventarr[$day_num][0]['cascio'])) ? $eventarr[$day_num][0]['cascio'] : "";
+          $seightyeightnine = (isset($eventarr[$day_num][0]['eightyeightnine'])) ? $eventarr[$day_num][0]['eightyeightnine'] : "";
+          $soneohtwoone = (isset($eventarr[$day_num][0]['oneohtwoone'])) ? $eventarr[$day_num][0]['oneohtwoone'] : "";
+          $sothersponsor = (isset($eventarr[$day_num][0]['othersponsor'])) ? $eventarr[$day_num][0]['othersponsor'] : "";
+          $sact2_minor = (isset($eventarr[$day_num][0]['act2_minor'])) ? $eventarr[$day_num][0]['act2_minor'] : "";
+          $sact3_minor = (isset($eventarr[$day_num][0]['act3_minor'])) ? $eventarr[$day_num][0]['act3_minor'] : "";
+          $sact4_minor = (isset($eventarr[$day_num][0]['act4_minor'])) ? $eventarr[$day_num][0]['act4_minor'] : "";
+          $stickets = (isset($eventarr[$day_num][0]['tickets'])) ? $eventarr[$day_num][0]['tickets'] : "";
 
           echo "<div id=\"popup" . $eventarr[$day_num][0]['id'] . "\" class=\"popup-box mfp-hide\">\n";
             include "popup.php";

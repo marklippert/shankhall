@@ -19,7 +19,7 @@ $rightnow = time();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Shank Hall<?php if ($PageTitle != "") echo " | " . $PageTitle; ?></title>
+    <title>Shank Hall<?php if (isset($PageTitle)) echo " | " . $PageTitle; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
@@ -28,7 +28,7 @@ $rightnow = time();
     <meta name="author" content="Mark Lippert">
 
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="inc/main.css">
+    <link rel="stylesheet" href="inc/main.css?<?php echo filemtime("inc/main.css"); ?>">
 
     <link rel="stylesheet" href="inc/jquery-magnific-popup-0.9.8.css">
     <script type="text/javascript" src="inc/jquery-1.10.2.min.js"></script>
@@ -86,7 +86,7 @@ $rightnow = time();
         </div>
       </header>
 
-      <div id="content<?php if ($PageTitle == "") echo "-cal"; ?>">
+      <div id="content<?php if (!isset($PageTitle)) echo "-cal"; ?>">
         <div id="slogan">
 
           <div id="social">

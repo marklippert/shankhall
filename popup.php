@@ -1,35 +1,65 @@
 <?php
 // Are we coming from the schedule or someplace else? Deal with it. Yeesh.
-$show_date = ($row['show_date'] != "") ? $row['show_date'] : $eventarr[$day_num][0]['show_date'];
-$notice = ($row['notice'] != "") ? $row['notice'] : $eventarr[$day_num][0]['notice'];
-$wmse = ($row['wmse'] != "") ? $row['wmse'] : $eventarr[$day_num][0]['wmse'];
-$sprecher = ($row['sprecher'] != "") ? $row['sprecher'] : $eventarr[$day_num][0]['sprecher'];
-$cascio = ($row['cascio'] != "") ? $row['cascio'] : $eventarr[$day_num][0]['cascio'];
-$eightyeightnine = ($row['eightyeightnine'] != "") ? $row['eightyeightnine'] : $eventarr[$day_num][0]['eightyeightnine'];
-$oneohtwoone = ($row['oneohtwoone'] != "") ? $row['oneohtwoone'] : $eventarr[$day_num][0]['oneohtwoone'];
-$othersponsor = ($row['othersponsor'] != "") ? $row['othersponsor'] : $eventarr[$day_num][0]['othersponsor'];
-$act1 = ($row['act1'] != "") ? $row['act1'] : $eventarr[$day_num][0]['act1'];
-$act1_url = ($row['act1_url'] != "") ? $row['act1_url'] : $eventarr[$day_num][0]['act1_url'];
-$act1_image = ($row['act1_image'] != "") ? $row['act1_image'] : $eventarr[$day_num][0]['act1_image'];
-$act1_desc = ($row['act1_desc'] != "") ? $row['act1_desc'] : $eventarr[$day_num][0]['act1_desc'];
-$act2 = ($row['act2'] != "") ? $row['act2'] : $eventarr[$day_num][0]['act2'];
-$act2_url = ($row['act2_url'] != "") ? $row['act2_url'] : $eventarr[$day_num][0]['act2_url'];
-$act2_image = ($row['act2_image'] != "") ? $row['act2_image'] : $eventarr[$day_num][0]['act2_image'];
-$act2_desc = ($row['act2_desc'] != "") ? $row['act2_desc'] : $eventarr[$day_num][0]['act2_desc'];
-$act2_minor = ($row['act2_minor'] != "") ? $row['act2_minor'] : $eventarr[$day_num][0]['act2_minor'];
-$act3 = ($row['act3'] != "") ? $row['act3'] : $eventarr[$day_num][0]['act3'];
-$act3_url = ($row['act3_url'] != "") ? $row['act3_url'] : $eventarr[$day_num][0]['act3_url'];
-$act3_image = ($row['act3_image'] != "") ? $row['act3_image'] : $eventarr[$day_num][0]['act3_image'];
-$act3_desc = ($row['act3_desc'] != "") ? $row['act3_desc'] : $eventarr[$day_num][0]['act3_desc'];
-$act3_minor = ($row['act3_minor'] != "") ? $row['act3_minor'] : $eventarr[$day_num][0]['act3_minor'];
-$act4 = ($row['act4'] != "") ? $row['act4'] : $eventarr[$day_num][0]['act4'];
-$act4_url = ($row['act4_url'] != "") ? $row['act4_url'] : $eventarr[$day_num][0]['act4_url'];
-$act4_image = ($row['act4_image'] != "") ? $row['act4_image'] : $eventarr[$day_num][0]['act4_image'];
-$act4_desc = ($row['act4_desc'] != "") ? $row['act4_desc'] : $eventarr[$day_num][0]['act4_desc'];
-$act4_minor = ($row['act4_minor'] != "") ? $row['act4_minor'] : $eventarr[$day_num][0]['act4_minor'];
-$time = ($row['time'] != "") ? $row['time'] : $eventarr[$day_num][0]['time'];
-$cover = ($row['cover'] != "") ? $row['cover'] : $eventarr[$day_num][0]['cover'];
-$tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['tickets'];
+if (isset($sshow_date) && $sshow_date != "") { $show_date = $sshow_date; }
+else { $show_date = (isset($row['show_date'])) ? $row['show_date'] : ""; }
+if (isset($snotice) && $snotice != "") { $notice = $snotice; }
+else { $notice = (isset($row['notice'])) ? $row['notice'] : ""; }
+if (isset($swmse) && $swmse != "") { $wmse = $swmse; }
+else { $wmse = (isset($row['wmse'])) ? $row['wmse'] : ""; }
+if (isset($ssprecher) && $ssprecher != "") { $sprecher = $ssprecher; }
+else { $sprecher = (isset($row['sprecher'])) ? $row['sprecher'] : ""; }
+if (isset($scascio) && $scascio != "") { $cascio = $scascio; }
+else { $cascio = (isset($row['cascio'])) ? $row['cascio'] : ""; }
+if (isset($seightyeightnine) && $seightyeightnine != "") { $eightyeightnine = $seightyeightnine; }
+else { $eightyeightnine = (isset($row['eightyeightnine'])) ? $row['eightyeightnine'] : ""; }
+if (isset($soneohtwoone) && $soneohtwoone != "") { $oneohtwoone = $soneohtwoone; }
+else { $oneohtwoone = (isset($row['oneohtwoone'])) ? $row['oneohtwoone'] : ""; }
+if (isset($sothersponsor) && $sothersponsor != "") { $othersponsor = $sothersponsor; }
+else { $othersponsor = (isset($row['othersponsor'])) ? $row['othersponsor'] : ""; }
+if (isset($sact1) && $sact1 != "") { $act1 = $sact1; }
+else { $act1 = (isset($row['act1'])) ? $row['act1'] : ""; }
+if (isset($sact1_url) && $sact1_url != "") { $act1_url = $sact1_url; }
+else { $act1_url = (isset($row['act1_url'])) ? $row['act1_url'] : ""; }
+if (isset($sact1_image) && $sact1_image != "") { $act1_image = $sact1_image; }
+else { $act1_image = (isset($row['act1_image'])) ? $row['act1_image'] : ""; }
+if (isset($sact1_desc) && $sact1_desc != "") { $act1_desc = $sact1_desc; }
+else { $act1_desc = (isset($row['act1_desc'])) ? $row['act1_desc'] : ""; }
+if (isset($sact2) && $sact2 != "") { $act2 = $sact2; }
+else { $act2 = (isset($row['act2'])) ? $row['act2'] : ""; }
+if (isset($sact2_url) && $sact2_url != "") { $act2_url = $sact2_url; }
+else { $act2_url = (isset($row['act2_url'])) ? $row['act2_url'] : ""; }
+if (isset($sact2_image) && $sact2_image != "") { $act2_image = $sact2_image; }
+else { $act2_image = (isset($row['act2_image'])) ? $row['act2_image'] : ""; }
+if (isset($sact2_desc) && $sact2_desc != "") { $act2_desc = $sact2_desc; }
+else { $act2_desc = (isset($row['act2_desc'])) ? $row['act2_desc'] : ""; }
+if (isset($sact2_minor) && $sact2_minor != "") { $act2_minor = $sact2_minor; }
+else { $act2_minor = (isset($row['act2_minor'])) ? $row['act2_minor'] : ""; }
+if (isset($sact3) && $sact3 != "") { $act3 = $sact3; }
+else { $act3 = (isset($row['act3'])) ? $row['act3'] : ""; }
+if (isset($sact3_url) && $sact3_url != "") { $act3_url = $sact3_url; }
+else { $act3_url = (isset($row['act3_url'])) ? $row['act3_url'] : ""; }
+if (isset($sact3_image) && $sact3_image != "") { $act3_image = $sact3_image; }
+else { $act3_image = (isset($row['act3_image'])) ? $row['act3_image'] : ""; }
+if (isset($sact3_desc) && $sact3_desc != "") { $act3_desc = $sact3_desc; }
+else { $act3_desc = (isset($row['act3_desc'])) ? $row['act3_desc'] : ""; }
+if (isset($sact3_minor) && $sact3_minor != "") { $act3_minor = $sact3_minor; }
+else { $act3_minor = (isset($row['act3_minor'])) ? $row['act3_minor'] : ""; }
+if (isset($sact4) && $sact4 != "") { $act4 = $sact4; }
+else { $act4 = (isset($row['act4'])) ? $row['act4'] : ""; }
+if (isset($sact4_url) && $sact4_url != "") { $act4_url = $sact4_url; }
+else { $act4_url = (isset($row['act4_url'])) ? $row['act4_url'] : ""; }
+if (isset($sact4_image) && $sact4_image != "") { $act4_image = $sact4_image; }
+else { $act4_image = (isset($row['act4_image'])) ? $row['act4_image'] : ""; }
+if (isset($sact4_desc) && $sact4_desc != "") { $act4_desc = $sact4_desc; }
+else { $act4_desc = (isset($row['act4_desc'])) ? $row['act4_desc'] : ""; }
+if (isset($sact4_minor) && $sact4_minor != "") { $act4_minor = $sact4_minor; }
+else { $act4_minor = (isset($row['act4_minor'])) ? $row['act4_minor'] : ""; }
+if (isset($stime) && $stime != "") { $time = $stime; }
+else { $time = (isset($row['time'])) ? $row['time'] : ""; }
+if (isset($scover) && $scover != "") { $cover = $scover; }
+else { $cover = (isset($row['cover'])) ? $row['cover'] : ""; }
+if (isset($stickets) && $stickets != "") { $tickets = $stickets; }
+else { $tickets = (isset($row['tickets'])) ? $row['tickets'] : ""; }
 ?>
 <div class="popup-scroll">
   <div class="popup-date"><?php echo date("F j, Y",$show_date); ?></div>
@@ -76,11 +106,8 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
   
   <?php
   // Act 1 image
-  if ($act1_image != "") {
-    list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act1_image);
-    $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-    echo "<img src=\"images/bands/" . $act1_image . "?" . time() . "\" alt=\"" . strip_tags($act1) . "\" class=\"$imgstyle\">\n";
-  }
+  if ($act1_image != "")
+    echo "<img src=\"images/bands/" . $act1_image . "?" . time() . "\" alt=\"" . strip_tags($act1) . "\" class=\"popup-img-center\">\n";
 
   // Act 1 description
   if ($act1_desc != "") echo str_replace("\n", "<br>", $act1_desc);
@@ -90,11 +117,8 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     echo "<div style=\"clear: both;\"></div>\n<hr style=\"margin: 1em 0;\">\n";
 
     // Act 2 image
-    if ($act2_image != "") {
-      list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act2_image);
-      $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-      echo "<img src=\"images/bands/" . $act2_image . "?" . time() . "\" alt=\"" . strip_tags($act2) . "\" class=\"$imgstyle\">\n";
-    }
+    if ($act2_image != "")
+      echo "<img src=\"images/bands/" . $act2_image . "?" . time() . "\" alt=\"" . strip_tags($act2) . "\" class=\"popup-img-center\">\n";
 
     // Act 2 description
     if ($act2_desc != "") echo str_replace("\n", "<br>", $act2_desc);
@@ -105,11 +129,8 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     echo "<div style=\"clear: both;\"></div>\n<hr style=\"margin: 1em 0;\">\n";
 
     // Act 3 image
-    if ($act3_image != "") {
-      list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act3_image);
-      $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-      echo "<img src=\"images/bands/" . $act3_image . "?" . time() . "\" alt=\"" . strip_tags($act3) . "\" class=\"$imgstyle\">\n";
-    }
+    if ($act3_image != "")
+      echo "<img src=\"images/bands/" . $act3_image . "?" . time() . "\" alt=\"" . strip_tags($act3) . "\" class=\"popup-img-center\">\n";
 
     // Act 3 description
     if ($act3_desc != "") echo str_replace("\n", "<br>", $act3_desc);
@@ -120,11 +141,8 @@ $tickets = ($row['tickets'] != "") ? $row['tickets'] : $eventarr[$day_num][0]['t
     echo "<div style=\"clear: both;\"></div>\n<hr style=\"margin: 1em 0;\">\n";
 
     // Act 4 image
-    if ($act4_image != "") {
-      list($width, $height, $type, $attr) = getimagesize("images/bands/" . $act4_image);
-      $imgstyle = ($width > 250) ? "popup-img-center" : "popup-img-left";
-      echo "<img src=\"images/bands/" . $act4_image . "?" . time() . "\" alt=\"" . strip_tags($act4) . "\" class=\"$imgstyle\">\n";
-    }
+    if ($act4_image != "")
+      echo "<img src=\"images/bands/" . $act4_image . "?" . time() . "\" alt=\"" . strip_tags($act4) . "\" class=\"popup-img-center\">\n";
 
     // Act 4 description
     if ($act4_desc != "") echo str_replace("\n", "<br>", $act4_desc);
