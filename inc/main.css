@@ -269,13 +269,12 @@ ARTICLE {
   height: 0;
   overflow: hidden;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .playbox-img IMG {
-  position: relative;
-}
-
-.playbox-img IMG.playbox-stamp {
   position: absolute;
   top: 0;
   left: 0;
@@ -429,6 +428,8 @@ ASIDE H1 {
 .popup-img-center {
   display: block;
   margin: 0 auto 1em;
+  max-width: 100%;
+  height: auto;
 }
 
 .popup-img-left,
@@ -437,6 +438,8 @@ ASIDE H1 {
   float: left;
   margin-right: 1em;
 }
+
+.details .popup-img-center { max-width: 350px; }
 
 FOOTER {
   margin: 0.9em 0;
@@ -1055,7 +1058,8 @@ A.ticket-link {
     display: block;
   }
 
-  .popup-img-center {
+  .popup-img-center,
+  .details .popup-img-center {
     max-width: 100%;
   }
 

@@ -25,6 +25,7 @@ You can also buy tickets right at Shank Hall.  Our box office is open on Tuesday
 
 <h1>Upcoming Shows</h1>
 <?php
+$tfloat = "";
 $result = $mysqli->query("SELECT * FROM schedule WHERE show_date >= '$today' AND embargo_date <= '$rightnow' AND acg = '' AND tickets != '' AND notice != 'canceled' AND notice != 'soldout' ORDER BY show_date ASC");
 
 while($row = $result->fetch_array(MYSQLI_BOTH)) {
@@ -41,24 +42,9 @@ while($row = $result->fetch_array(MYSQLI_BOTH)) {
     if (($row['act1_image'] != "") || ($row['main_image'] != "")) {
       // Which image are we using?
       $img = (empty($row['main_image'])) ? "images/bands/" . $row['act1_image'] : "images/bands/" . $row['main_image'];
-      
-      if (file_exists($img)) {
-        // Get width and height of image
-        list($width, $height, $type, $attr) = getimagesize($img);
-        
-        // Get ratio of image so it can be centered in a square box
-        $ratio = ceil(($width / $height) * 100);
-        $adjust = ($ratio - 100) / 2;
-
-        $adj_pos = ($width/$height > 1) ? "width: " . $ratio . "%; left: -" . $adjust . "%;" : "width: 100%; top: " . $adjust . "%;";
-      }
     }
-
-    $img_alt = ($row['main_text'] != "") ? strip_tags($row['main_text']) : strip_tags($row['act1']);
     ?>
-    <div class="playbox-img">
-      <img src="<?php echo $img; ?>" alt="<?php echo $img_alt; ?>" style="<?php echo $adj_pos; ?>">
-    </div> <!-- END playbox-img -->
+    <div class="playbox-img" style="background-image: url(<?php echo $img; ?>);"></div>
 
     <?php
     if (empty($row['main_text'])) {

@@ -2,28 +2,14 @@
 if (($row['act1_image'] != "") || ($row['main_image'] != "")) {
   // Which image are we using?
   $img = (empty($row['main_image'])) ? "images/bands/" . $row['act1_image'] : "images/bands/" . $row['main_image'];
-  
-  if (file_exists($img)) {
-    // Get width and height of image
-    list($width, $height, $type, $attr) = getimagesize($img);
-    
-    // Get ratio of image so it can be centered in a square box
-    $ratio = ceil(($width / $height) * 100);
-    $adjust = ($ratio - 100) / 2;
-
-    $adj_pos = ($width/$height > 1) ? "width: " . $ratio . "%; left: -" . $adjust . "%;" : "width: 100%; top: " . $adjust . "%;";
-  }
 }
-
-$img_alt = ($row['main_text'] != "") ? strip_tags($row['main_text']) : strip_tags($row['act1']);
 ?>
 
 <div class="playbox">
-  <div class="playbox-img">
-    <img src="<?php echo $img . "?" . time(); ?>" alt="<?php echo $img_alt; ?>" style="<?php echo $adj_pos; ?>">
+  <div class="playbox-img" style="background-image: url(<?php echo $img; ?>);">
     <?php
-    if ($row['notice'] == "canceled") echo "<img src=\"images/canceled.png\" alt=\"CANCELED\" class=\"playbox-stamp\">";
-    if ($row['notice'] == "soldout") echo "<img src=\"images/soldout.png\" alt=\"SOLD OUT\" class=\"playbox-stamp\">";
+    if ($row['notice'] == "canceled") echo "<img src=\"images/canceled.png\" alt=\"CANCELED\">";
+    if ($row['notice'] == "soldout") echo "<img src=\"images/soldout.png\" alt=\"SOLD OUT\">";
     ?>
   </div> <!-- END playbox-img -->
   

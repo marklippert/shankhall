@@ -8,7 +8,7 @@ $PageTitle = date("F j, Y",$row['show_date']);
 include "header.php";
 ?>
 
-<div class="playbox">
+<div class="playbox details">
   <?php include "popup.php"; ?>
 </div>
 

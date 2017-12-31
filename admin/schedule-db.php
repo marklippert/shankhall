@@ -1,11 +1,21 @@
 <?php
 include "../inc/dbconfig.php";
 
-if ($_GET['a'] != "delete") {
+if ($_GET['a'] != "delete" && $_GET['a'] != "upload") {
   $ShowDate = strtotime($_POST['show_date']);
-  //$EmbargoDate = strtotime($_POST['embargo_date']);
   $EmbargoDate = strtotime($_POST['embargo_date'] . " " . $_POST['embargo_hour']);
+  
+  $playbox = (isset($_POST['playbox'])) ? "yes" : "";
+  $donttweet = (isset($_POST['donttweet'])) ? "yes" : "";
   $acg = (isset($_POST['acg'])) ? "yes" : "";
+  $wmse = (isset($_POST['wmse'])) ? "yes" : "";
+  $eightyeightnine = (isset($_POST['eightyeightnine'])) ? "yes" : "";
+  $oneohtwoone = (isset($_POST['oneohtwoone'])) ? "yes" : "";
+  $sprecher = (isset($_POST['sprecher'])) ? "yes" : "";
+  $cascio = (isset($_POST['cascio'])) ? "yes" : "";
+  $act2_minor = (isset($_POST['act2_minor'])) ? "yes" : "";
+  $act3_minor = (isset($_POST['act3_minor'])) ? "yes" : "";
+  $act4_minor = (isset($_POST['act4_minor'])) ? "yes" : "";
 }
 
 switch ($_GET['a']) {
@@ -61,27 +71,27 @@ switch ($_GET['a']) {
                 '" . $_POST['act2_url'] . "',
                 '" . $_POST['act2_image'] . "',
                 '" . $mysqli->real_escape_string($_POST['act2_desc']) . "',
-                '" . $_POST['act2_minor'] . "',
+                '" . $act2_minor . "',
                 '" . $mysqli->real_escape_string($_POST['act3']) . "',
                 '" . $_POST['act3_url'] . "',
                 '" . $_POST['act3_image'] . "',
                 '" . $mysqli->real_escape_string($_POST['act3_desc']) . "',
-                '" . $_POST['act3_minor'] . "',
+                '" . $act3_minor . "',
                 '" . $mysqli->real_escape_string($_POST['act4']) . "',
                 '" . $_POST['act4_url'] . "',
                 '" . $_POST['act4_image'] . "',
                 '" . $mysqli->real_escape_string($_POST['act4_desc']) . "',
-                '" . $_POST['act4_minor'] . "',
+                '" . $act4_minor . "',
                 '" . $mysqli->real_escape_string($_POST['main_text']) . "',
                 '" . $_POST['main_image'] . "',
                 '" . $_POST['sticky'] . "',
-                '" . $_POST['playbox'] . "',
-                '" . $_POST['donttweet'] . "',
-                '" . $_POST['wmse'] . "',
-                '" . $_POST['sprecher'] . "',
-                '" . $_POST['cascio'] . "',
-                '" . $_POST['eightyeightnine'] . "',
-                '" . $_POST['oneohtwoone'] . "',
+                '" . $playbox . "',
+                '" . $donttweet . "',
+                '" . $wmse . "',
+                '" . $sprecher . "',
+                '" . $cascio . "',
+                '" . $eightyeightnine . "',
+                '" . $oneohtwoone . "',
                 '" . $mysqli->real_escape_string($_POST['othersponsor']) . "',
                 '" . $_POST['tickets'] . "'
               )";
@@ -101,28 +111,28 @@ switch ($_GET['a']) {
               act2_url = '" . $_POST['act2_url'] . "',
               act2_image = '" . $_POST['act2_image'] . "',
               act2_desc = '" . $mysqli->real_escape_string($_POST['act2_desc']) . "',
-              act2_minor = '" . $_POST['act2_minor'] . "',
+              act2_minor = '" . $act2_minor . "',
               act3 = '" . $mysqli->real_escape_string($_POST['act3']) . "',
               act3_url = '" . $_POST['act3_url'] . "',
               act3_image = '" . $_POST['act3_image'] . "',
               act3_desc = '" . $mysqli->real_escape_string($_POST['act3_desc']) . "',
-              act3_minor = '" . $_POST['act3_minor'] . "',
+              act3_minor = '" . $act3_minor . "',
               act4 = '" . $mysqli->real_escape_string($_POST['act4']) . "',
               act4_url = '" . $_POST['act4_url'] . "',
               act4_image = '" . $_POST['act4_image'] . "',
               act4_desc = '" . $mysqli->real_escape_string($_POST['act4_desc']) . "',
-              act4_minor = '" . $_POST['act4_minor'] . "',
+              act4_minor = '" . $act4_minor . "',
               main_text = '" . $mysqli->real_escape_string($_POST['main_text']) . "',
               main_image = '" . $_POST['main_image'] . "',
               sticky = '" . $_POST['sticky'] . "',
-              playbox = '" . $_POST['playbox'] . "',
-              donttweet = '" . $_POST['donttweet'] . "',
+              playbox = '" . $playbox . "',
+              donttweet = '" . $donttweet . "',
               notice = '" . $_POST['notice'] . "',
-              wmse = '" . $_POST['wmse'] . "',
-              sprecher = '" . $_POST['sprecher'] . "',
-              cascio = '" . $_POST['cascio'] . "',
-              eightyeightnine = '" . $_POST['eightyeightnine'] . "',
-              oneohtwoone = '" . $_POST['oneohtwoone'] . "',
+              wmse = '" . $wmse . "',
+              sprecher = '" . $sprecher . "',
+              cascio = '" . $cascio . "',
+              eightyeightnine = '" . $eightyeightnine . "',
+              oneohtwoone = '" . $oneohtwoone . "',
               othersponsor = '" . $mysqli->real_escape_string($_POST['othersponsor']) . "',
               tickets = '" . $_POST['tickets'] . "'
               WHERE id = '" . $_POST['id'] . "'";
@@ -131,7 +141,7 @@ switch ($_GET['a']) {
     $query = "DELETE FROM schedule WHERE id = '" . $_GET['id'] . "'";
     break;
   case "upload";
-    $max_width = 350;
+    $max_width = 1000;
     $img_path = "../images/bands/";
     $TheImage = basename($_FILES['image']['name']);
     $target_path = $img_path . "tmp_" . $TheImage;
@@ -173,7 +183,7 @@ switch ($_GET['a']) {
     break;
 }
 
-if ($query != "") $mysqli->query($query);
+if (isset($query)) $mysqli->query($query);
 
 $mysqli->close();
 
