@@ -247,6 +247,23 @@ ARTICLE {
   margin-bottom: 1.2em;
 }
 
+#notice {
+  margin-bottom: 2em;
+  border-radius: 6px;
+  padding: 1em;
+  background: #843700;
+  color: #FFFFFF;
+  font-size: 120%;
+  line-height: 1.4em;
+}
+
+#notice .two-col {
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+  font-size: 90%;
+}
+
 .playbox {
   padding: 1em;
   background: #FFFFFF;
@@ -724,6 +741,12 @@ A.ticket-link {
   
   #menu UL LI:nth-child(2) {
     background: none;
+  }
+
+  #notice .two-col {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    columns: 1;
   }
   
   #content-cal {
