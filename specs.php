@@ -4,7 +4,7 @@ include "header.php";
 ?>
 
 <h1>Technical Specs</h1>
-Shank Hall's audio and lighting system is provided by Faymous Sound.  Technical questions should be directed to Tommy Fay at (414) 640-0702.<br>
+Shank Hall's audio and lighting system is provided by BGREG Audio. Technical questions should be directed to Brandon Gregory at <a href="mailto:brandon@bgregaudio.com">brandon@bgregaudio.com</a>.<br>
 <br>
 <br>
 
@@ -25,7 +25,7 @@ Shank Hall's audio and lighting system is provided by Faymous Sound.  Technical 
       <li>Ashly Protea 4.24C digital processing</li>
     </ul>
   </div>
-  
+
   <div class="av-right">
     MONITOR SYSTEM:<br>
     <ul>
@@ -38,42 +38,37 @@ Shank Hall's audio and lighting system is provided by Faymous Sound.  Technical 
   </div>
 
   <div style="clear: both;"></div>
-  
+
   <div class="av-left">
     FRONT OF HOUSE:<br>
     <ul>
-      <li>Soundcraft MH3 40 channel house console</li>
+      <li>Behringer X32 Console</li>
       <li>Klark Teknik DN360 house EQ</li>
-      <li>Ashly GQX3102 monitor EQs (2)</li>
       <li>Yamaha SPX990 multi effects unit</li>
       <li>Yamaha SPX90 multi effects units (2)</li>
       <li>TC Electronic D2 digital delay</li>
-      <li>Behringer Composer compressors x4 (8 channels insertable)</li>
-      <li>Drawmer MX40 quad gates x2 (8 channels insertable)</li>
       <li>Denon DNC550R dual well CD recorder</li>
       <li>Rapco 32 channel splitter snake</li>
     </ul>
   </div>
-  
+
   <div class="av-right">
     MICS / DIs / STANDS:<br>
     <ul>
-      <li>Shure Beta 52</li>
-      <li>AKG D112</li>
-      <li>Shure Beta 58A (6)</li>
-      <li>Shure SM58 (2)</li>
-      <li>Shure SM57 (6)</li>
+      <li>Shure Beta 52 (2)</li>
+      <li>Shure Beta 58A (8)</li>
+      <li>Shure SM57 (8)</li>
       <li>Shure Beta 57</li>
       <li>Sennheiser E604 (4)</li>
       <li>Audio Technica ATM23HE (3)</li>
       <li>Shure SM81 (2)</li>
       <li>Audio Technica ATM34R</li>
-      <li>Countryman Type 85 active DI (2)</li>
       <li>Whirlwind Imp passive DI (6)</li>
+      <li>Rapco DI (2)</li>
       <li>Mic stands - all varieties (24)</li>
     </ul>
   </div>
-  
+
   <div style="clear: both; text-align: center;">
     Stage size: 22 feet wide, 15 feet deep, 1&frac12; feet high
   </div><br>
