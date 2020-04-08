@@ -2,6 +2,9 @@
 
         <?php if (!isset($PageTitle)) { ?>
         <aside>
+          <img src="images/john-prine.jpg" alt="" style="max-width: 100%;"><br>
+          <br>
+
           <h1>Quick Calendar</h1>
           <div id="quickcal-back">
             <div id="quickcal">
@@ -19,6 +22,7 @@
                 if ($row['embargo_date'] >= $tendays) echo " <strong style=\"color: #843700;\">NEW</strong>";
 
                 if ($row['notice'] == "canceled") echo " <strong style=\"color: #843700;\">CANCELED</strong>";
+                if ($row['notice'] == "postponed") echo " <strong style=\"color: #843700;\">POSTPONED</strong>";
                 if ($row['notice'] == "soldout") echo " <strong style=\"color: #843700;\">SOLD OUT</strong>";
                 if ($row['notice'] == "newdate") echo " <strong style=\"color: #843700;\">NEW DATE</strong>";
 
@@ -33,11 +37,11 @@
                   $event = $row['main_text'];
                 }
 
-                if ($row['notice'] == "canceled") echo "<strike>";
+                if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "<strike>";
 
                 echo $event;
 
-                if ($row['notice'] == "canceled") echo "</strike>";
+                if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "</strike>";
 
                 echo "</a>\n";
                 
@@ -68,15 +72,10 @@
             <br>
             <?php } ?>
 
-            <a href="http://www.milwaukeerocks.com"><img src="images/milwrocks.jpg" alt="Milwaukee Rocks"></a><br>
+            <img src="images/mark-shurilla.jpg" alt="" style="max-width: 100%;"><br>
             <br>
-            
-            <!--
-            <a href="http://attractions.uptake.com/wisconsin/milwaukee/shank_hall_7988249.html" style="display: block;font-family:'Trebuchet MS',Verdana,Geneva,Arial,Helvetica,sans-serif;background-repeat:no-repeat;color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); background-image:url(http://pr.ak.vresp.com/f785d9297/edge.uptake.com/images/bob/uptake170x30.png?__nocache__=1);font-size: 10px;text-decoration: none;min-height:20px;_height:20px;padding-left:70px;padding-top:15px;width:100px;padding-right:3px;text-align:center; margin: 0 auto;">Milwaukee</a><br>
-            <br>
-            -->
 
-            <img src="images/mark-shurilla.jpg" alt="" style="max-width: 100%;">
+            <img src="images/leon-redbone.jpg" alt="" style="max-width: 100%;">
           </div>
         </aside>
 
