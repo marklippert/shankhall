@@ -2,6 +2,7 @@
 if (($row['act1_image'] != "") || ($row['main_image'] != "")) {
   // Which image are we using?
   $img = (empty($row['main_image'])) ? "images/bands/" . $row['act1_image'] : "images/bands/" . $row['main_image'];
+  $img .= "?" . filemtime($img);
 }
 ?>
 
@@ -46,11 +47,12 @@ if (($row['act1_image'] != "") || ($row['main_image'] != "")) {
       $event = $row['main_text'];
     }
 
-    if ($row['notice'] == "canceled") echo "<strike>";
+    if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "<strike>";
 
     echo $event;
 
     if ($row['notice'] == "canceled") echo "</strike> <strong style=\"color: #843700;\">CANCELED</strong>";
+    if ($row['notice'] == "postponed") echo "</strike> <strong style=\"color: #843700;\">POSTPONED</strong>";
     if ($row['notice'] == "soldout") echo " <strong style=\"color: #843700;\">SOLD OUT</strong>";
     if ($row['notice'] == "newdate") echo " <strong style=\"color: #843700;\">NEW DATE</strong>";
     ?>
@@ -58,7 +60,7 @@ if (($row['act1_image'] != "") || ($row['main_image'] != "")) {
 
   <div class="playbox-time">
     <?php
-    if ($row['notice'] == "canceled") echo "<strike>";
+    if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "<strike>";
 
     echo "<span class=\"playbox-date\">";
       echo "<span class=\"playbox-day\">";
@@ -74,7 +76,7 @@ if (($row['act1_image'] != "") || ($row['main_image'] != "")) {
       if (!empty($row['cover'])) echo $row['cover'];
     echo "</span>";
 
-    if ($row['notice'] == "canceled") echo "</strike>";
+    if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "</strike>";
     
     if (strpos($row['tickets'], 'ticketweb') !== false && $row['notice'] != "soldout" && $row['notice'] != "canceled") echo "<a href=\"" . $row['tickets'] . "\"><img src=\"images/ticketweb.png\" alt=\"TicketWeb\"></a>";
     if (strpos($row['tickets'], 'ticketmaster') !== false && $row['notice'] != "soldout" && $row['notice'] != "canceled") echo "<a href=\"" . $row['tickets'] . "\"><img src=\"images/ticketmaster.png\" alt=\"TicketMaster\"></a>";

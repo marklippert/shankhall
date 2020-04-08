@@ -36,6 +36,7 @@ function ListImages($sel) {
   <?php if ($_GET['a'] == "edit") { ?>
   <div class="sub-sidebar">
     <span><input type="radio" name="notice" value="canceled"<?php if ($row['notice'] == "canceled") echo " checked"; ?>> <strong>Canceled</strong></span>
+    <span><input type="radio" name="notice" value="postponed"<?php if ($row['notice'] == "postponed") echo " checked"; ?>> <strong>Postponed</strong></span>
     <span><input type="radio" name="notice" value="soldout"<?php if ($row['notice'] == "soldout") echo " checked"; ?>> <strong>Sold Out</strong></span>
     <span><input type="radio" name="notice" value="newdate"<?php if ($row['notice'] == "newdate") echo " checked"; ?>> <strong>New Date</strong></span>
     <span><input type="radio" name="notice" value=""<?php if ($row['notice'] == "") echo " checked"; ?>> <strong>All Is Well</strong></span>

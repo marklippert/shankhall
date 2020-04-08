@@ -50,6 +50,7 @@ switch ($_GET['a']) {
                 sticky,
                 playbox,
                 donttweet,
+                notice,
                 wmse,
                 sprecher,
                 cascio,
@@ -87,6 +88,7 @@ switch ($_GET['a']) {
                 '" . $_POST['sticky'] . "',
                 '" . $playbox . "',
                 '" . $donttweet . "',
+                '',
                 '" . $wmse . "',
                 '" . $sprecher . "',
                 '" . $cascio . "',
@@ -184,6 +186,7 @@ switch ($_GET['a']) {
 }
 
 if (isset($query)) $mysqli->query($query);
+// if (!$mysqli->query($query)) printf("Errormessage: %s\n", $mysqli->error);
 
 $mysqli->close();
 

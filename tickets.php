@@ -26,7 +26,7 @@ You can also buy tickets right at Shank Hall.  Our box office is open on Tuesday
 <h1>Upcoming Shows</h1>
 <?php
 $tfloat = "";
-$result = $mysqli->query("SELECT * FROM schedule WHERE show_date >= '$today' AND embargo_date <= '$rightnow' AND acg = '' AND tickets != '' AND notice != 'canceled' AND notice != 'soldout' ORDER BY show_date ASC");
+$result = $mysqli->query("SELECT * FROM schedule WHERE show_date >= '$today' AND embargo_date <= '$rightnow' AND acg = '' AND tickets != '' AND notice != 'canceled' AND notice != 'postponed' AND notice != 'soldout' ORDER BY show_date ASC");
 
 while($row = $result->fetch_array(MYSQLI_BOTH)) {
   $tfloat = ($tfloat == "right" || $tfloat == "") ? "left" : "right";

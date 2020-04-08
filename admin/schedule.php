@@ -238,7 +238,7 @@ function ListImages() {
 
             <div class="info">
               <?php
-              if ($row['notice'] == "canceled") echo "<strike>";
+              if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "<strike>";
 
               if (!empty($row['acg'])) echo "[ACG] ";
 
@@ -249,7 +249,7 @@ function ListImages() {
 
               if ($row['embargo_date'] > $rightnow) echo "<br><em style=\"font-size: 80%;\">[embargoed until " . date("n/j g:ia",$row['embargo_date']) . "]</em>";
 
-              if ($row['notice'] == "canceled") echo "</strike>";
+              if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "</strike>";
               ?>
             </div>
 
@@ -279,6 +279,7 @@ function ListImages() {
     $title = date("F Y");
     $lastmonth = mktime(1, 1, 1, date('m')-1, 1, date('Y'));
     $nextmonth = mktime(1, 1, 1, date('m')+1, 1, date('Y'));
+    $TheB = "";
   }
 
   $first_day = strtotime("First day of " . $title . " 00:00");
@@ -310,7 +311,7 @@ function ListImages() {
 
       <div class="info">
         <?php
-        if ($row['notice'] == "canceled") echo "<strike>";
+        if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "<strike>";
 
         if (!empty($row['acg'])) echo "[ACG] ";
 
@@ -323,7 +324,7 @@ function ListImages() {
 
         if ($row['embargo_date'] > $rightnow) echo "<br><em style=\"font-size: 80%;\">[embargoed until " . date("n/j g:ia",$row['embargo_date']) . "]</em>";
 
-        if ($row['notice'] == "canceled") echo "</strike>";
+        if ($row['notice'] == "canceled" || $row['notice'] == "postponed") echo "</strike>";
         ?>
       </div>
 

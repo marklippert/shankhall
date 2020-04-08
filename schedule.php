@@ -114,6 +114,9 @@ include "header.php";
           // Canceled?
           if ($snotice == "canceled") echo "<strong style=\"color: #000000;\">CANCELED</strong><br><strike>";
 
+          // Postponed?
+          if ($snotice == "postponed") echo "<strong style=\"color: #000000;\">POSTPONED</strong><br><strike>";
+
           // Display acts
           echo ($sact1_url == "") ? $sact1 : "<a href=\"" . $sact1_url . "\">" . $sact1 . "</a>";
           if ($sact2 != "") {
@@ -134,8 +137,8 @@ include "header.php";
           echo ($stime == "") ? "" : $stime . " ";
           echo ($scover == "") ? "" : $scover . " ";
 
-          // Canceled?
-          if ($snotice == "canceled") echo "</strike>";
+          // Canceled or postponed?
+          if ($snotice == "canceled" || $snotice == "postponed") echo "</strike>";
 
           // Display "show details"
           if (($sact1_image != "") || ($sact1_desc != "") || ($sact2_image != "") || ($sact2_desc != "") || ($sact3_image != "") || ($sact3_desc != "") || ($sact4_image != "") || ($sact4_desc != "")) echo "<br><a href=\"#popup" . $eventarr[$day_num][0]['id'] . "\" class=\"popup-link\" style=\"font-size: 80%;\">show details</a>";
