@@ -78,19 +78,21 @@ function ListImages() {
 
       <div style="clear: both;"></div>
       
+      <input type="checkbox" name="acg"> <strong>ACG</strong><br>
+      <br>
+
+      <input type="checkbox" name="playbox"> <strong>Do NOT show in Playbox</strong><br>
+      <input type="checkbox" name="quickcal"> <strong>Do NOT show on Quick Calendar</strong><br>
+      <input type="checkbox" name="donttweet"> <strong>Do NOT tweet</strong><br>
+      <br>
+      
       <div class="form-left">
-        <input type="checkbox" name="playbox"> <strong>Do NOT show in Playbox</strong><br>
-        <input type="checkbox" name="donttweet"> <strong>Don't tweet</strong><br>
-        <br>
         <input type="checkbox" name="wmse"> <strong>WMSE Presents</strong><br>
         <input type="checkbox" name="eightyeightnine"> <strong>88Nine Presents</strong><br>
         <input type="checkbox" name="oneohtwoone"> <strong>102.1 Presents</strong>
       </div>
 
       <div class="form-right">
-        <input type="checkbox" name="acg"> <strong>ACG</strong><br>
-        <br>
-        <br>
         <input type="checkbox" name="sprecher"> <strong>Sprecher Presents</strong><br>
         <input type="checkbox" name="cascio"> <strong>Cascio Presents</strong>
       </div>

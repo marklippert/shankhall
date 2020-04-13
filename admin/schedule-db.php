@@ -6,6 +6,7 @@ if ($_GET['a'] != "delete" && $_GET['a'] != "upload") {
   $EmbargoDate = strtotime($_POST['embargo_date'] . " " . $_POST['embargo_hour']);
   
   $playbox = (isset($_POST['playbox'])) ? "yes" : "";
+  $quickcal = (isset($_POST['quickcal'])) ? "yes" : "";
   $donttweet = (isset($_POST['donttweet'])) ? "yes" : "";
   $acg = (isset($_POST['acg'])) ? "yes" : "";
   $wmse = (isset($_POST['wmse'])) ? "yes" : "";
@@ -49,6 +50,7 @@ switch ($_GET['a']) {
                 main_image,
                 sticky,
                 playbox,
+                quickcal,
                 donttweet,
                 notice,
                 wmse,
@@ -87,6 +89,7 @@ switch ($_GET['a']) {
                 '" . $_POST['main_image'] . "',
                 '" . $_POST['sticky'] . "',
                 '" . $playbox . "',
+                '" . $quickcal . "',
                 '" . $donttweet . "',
                 '',
                 '" . $wmse . "',
@@ -128,6 +131,7 @@ switch ($_GET['a']) {
               main_image = '" . $_POST['main_image'] . "',
               sticky = '" . $_POST['sticky'] . "',
               playbox = '" . $playbox . "',
+              quickcal = '" . $quickcal . "',
               donttweet = '" . $donttweet . "',
               notice = '" . $_POST['notice'] . "',
               wmse = '" . $wmse . "',

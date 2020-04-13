@@ -12,7 +12,7 @@
               $count = 1;
               $tendays = strtotime("today -10 days");
 
-              $result = $mysqli->query("SELECT * FROM schedule WHERE show_date >= '$today' AND embargo_date <= '$rightnow' AND acg = '' ORDER BY show_date ASC");
+              $result = $mysqli->query("SELECT * FROM schedule WHERE show_date >= '$today' AND embargo_date <= '$rightnow' AND acg = '' AND quickcal = '' ORDER BY show_date ASC");
 
               while($row = $result->fetch_array(MYSQLI_BOTH)) {
                 if ($count > 1) echo "<hr>\n";

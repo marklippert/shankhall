@@ -85,18 +85,22 @@ function ListImages($sel) {
 
   <div style="clear: both;"></div>
 
+  <input type="checkbox" name="acg"<?php if ($_GET['a'] == "edit" && !empty($row['acg'])) echo " checked"; ?>> <strong>ACG</strong><br>
+  <br>
+  
+  <input type="checkbox" name="playbox"<?php if ($_GET['a'] == "edit" && !empty($row['playbox'])) echo " checked"; ?>> <strong>Do NOT show in Playbox</strong><br>
+  <input type="checkbox" name="quickcal"<?php if ($_GET['a'] == "edit" && !empty($row['quickcal'])) echo " checked"; ?>> <strong>Do NOT show on Quick Calendar</strong><br>
+  <input type="checkbox" name="donttweet"<?php if ($_GET['a'] == "edit" && !empty($row['donttweet'])) echo " checked"; ?>> <strong>Do NOT tweet</strong><br>
+  <br>
+
   <div class="form-left">
-    <input type="checkbox" name="playbox"<?php if ($_GET['a'] == "edit" && !empty($row['playbox'])) echo " checked"; ?>> <strong>Do NOT show in Playbox</strong><br>
-    <input type="checkbox" name="donttweet"<?php if ($_GET['a'] == "edit" && !empty($row['donttweet'])) echo " checked"; ?>> <strong>Don't tweet</strong><br>
-    <br>
     <input type="checkbox" name="wmse"<?php if ($_GET['a'] == "edit" && !empty($row['wmse'])) echo " checked"; ?>> <strong>WMSE Presents</strong><br>
     <input type="checkbox" name="eightyeightnine"<?php if ($_GET['a'] == "edit" && !empty($row['eightyeightnine'])) echo " checked"; ?>> <strong>88Nine Presents</strong><br>
     <input type="checkbox" name="oneohtwoone"<?php if ($_GET['a'] == "edit" && !empty($row['oneohtwoone'])) echo " checked"; ?>> <strong>102.1 Presents</strong>
   </div>
 
   <div class="form-right">
-    <input type="checkbox" name="acg"<?php if ($_GET['a'] == "edit" && !empty($row['acg'])) echo " checked"; ?>> <strong>ACG</strong><br>
-    <br>
+    
     <br>
     <input type="checkbox" name="sprecher"<?php if ($_GET['a'] == "edit" && !empty($row['sprecher'])) echo " checked"; ?>> <strong>Sprecher Presents</strong><br>
     <input type="checkbox" name="cascio"<?php if ($_GET['a'] == "edit" && !empty($row['cascio'])) echo " checked"; ?>> <strong>Cascio Presents</strong>
