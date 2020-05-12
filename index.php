@@ -14,7 +14,7 @@ include "header.php";
 
   <div class="two-col">
     March 16 Flying Buffaloes - new date Aug 5<br>
-    March 18 Ward Davis - new date June 7<br>
+    March 18 Ward Davis - new date Sept 9<br>
     March 19 The Nielsen Trust - new Dec 12<br>
     March 20 Jeffrey Gaines - new date July 19<br>
     March 21 No Quarter - new date Nov 6<br>
@@ -22,38 +22,45 @@ include "header.php";
     March 27 Koch Marshall Trio - new date Dec 5<br>
     March 28 Brand X - new date Sept 20<br>
     April 1 Tinsley Ellis - new date Sept 30<br>
+    April 2 The Claudettes - new date Oct 8<br>
     April 3 Diver Down, NightSnake - new date Aug 8<br>
     April 4 Jagged Little Pill, etc - new date Oct 30<br>
-    April 8 Shawn Mullins - new date TBA<br>
+    April 8 Shawn Mullins - new date Oct 28<br>
     April 10 The Lovin' Kind, etc - new date Fall TBA<br>
     April 17 Altered 5 Blues Band - new date Oct 9<br>
     April 18 Benjamin Trick - new date Jan 16, 2021<br>
     April 19 The Mighty Pines - new date TBA<br>
     April 21 Yak Attack - new date Sept 29<br>
-    April 23 Jazz is Phsh - new date July 29<br>
+    April 23 Jazz is Phsh - new date Oct 20<br>
     April 24 Frank Marino - new date Sept 28<br>
-    April 25 New Wave Fest - new date June 12<br>
+    April 25 New Wave Fest - new date July 31<br>
     April 29 The Minks - new date Aug 13<br>
     April 30 24-7 Spyz - new date July 21<br>
-    May 1 Pundamonium - new date Aug 9<br>
+    May 1 Pundamonium - new date Sept 25<br>
     May 4 Cold - new date Oct 31<br>
     May 7 Moonshine Bandits - new date Sept 11<br>
     May 8 Cowboy Mouth - new date July 24<br>
     May 9 Super-Unknown, etc - new date Oct 10<br>
     May 14 Stu Larsen - new date 2021 TBA<br>
-    May 15 Katie Toupin - new date TBA<br>
+    May 15 Katie Toupin - new date Aug 28<br>
     May 16 Monochrome Set - new date Sept 5<br>
     May 22 Stay Outside - new date TBA<br>
     May 23 Cloud Zero - new date TBA<br>
+    May 29 Steve Hofstetter - new date TBA<br>
+    June 4 Steve Forbert - new date Sept 13<br>
+    June 5 Webb Wilder - new date Aug 29<br>
+    June 6 Mutlu - new date Feb 27, 2021<br>
+    June 19 The Get Happy!! - new date July 11<br>
+    June 20 Chris Duarte Group - new date TBA<br>
     <br>
     
     March 30 Talisk is canceled<br>
-    April 2 The Claudettes is canceled<br>
     April 11 Jay Anderson is canceled<br>
     May 3 Pierre Bensusan is canceled<br>
     May 2 Wayne Baker Brooks is canceled<br>
     May 27 Jesus Jones is canceled<br>
     May 31 Andrew Rivers is canceled<br>
+    June 6 James Lee Stanley is canceled<br>
     June 13 Bettye LaVette is canceled
   </div>
   <br>
