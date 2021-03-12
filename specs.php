@@ -44,9 +44,6 @@ Shank Hall's audio and lighting system is provided by BGREG Audio. Technical que
     <ul>
       <li>Behringer X32 Console</li>
       <li>Klark Teknik DN360 house EQ</li>
-      <li>Yamaha SPX990 multi effects unit</li>
-      <li>Yamaha SPX90 multi effects units (2)</li>
-      <li>TC Electronic D2 digital delay</li>
       <li>Denon DNC550R dual well CD recorder</li>
       <li>Rapco 32 channel splitter snake</li>
     </ul>
